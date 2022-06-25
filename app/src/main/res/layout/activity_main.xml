@@ -32,7 +32,7 @@
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/scoreTemA"
+                android:id="@+id/textView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
@@ -41,33 +41,6 @@
                 android:textAllCaps="true"
                 android:textColor="#000"
                 android:textSize="56sp" />
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                >
-
-                <RadioButton
-                    android:onClick="onRadioButtonClicked"
-                    android:id="@+id/radioButton1TemA"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="+1" />
-
-                <RadioButton
-                    android:onClick="onRadioButtonClicked"
-                    android:id="@+id/radioButton2TemA"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="+2" />
-
-                <RadioButton
-                    android:id="@+id/radioButton3TemA"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="+3" />
-            </RadioGroup>
-
-
         </LinearLayout>
 
         <LinearLayout
@@ -92,7 +65,7 @@
 
 
             <TextView
-                android:id="@+id/scoreTemB"
+                android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
@@ -102,54 +75,71 @@
                 android:textColor="#000"
                 android:textSize="56sp" />
 
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                >
-
-                <RadioButton
-                    android:id="@+id/radioButton1TemB"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:onClick="onRadioButtonClicked"
-                    android:text="+1" />
-
-                <RadioButton
-                    android:id="@+id/radioButton2TemB"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:onClick="onRadioButtonClicked"
-                    android:text="+2" />
-
-                <RadioButton
-                    android:id="@+id/radioButton3TemB"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:onClick="onRadioButtonClicked"
-                    android:text="+3" />
-            </RadioGroup>
-
         </LinearLayout>
-    </LinearLayout>
 
-    <LinearLayout
+    </LinearLayout>
+    <TextView
+        android:id="@+id/scoreBylbl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:padding="20dp"
+        android:text="1"
+        android:textSize="20sp" />
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:max="5"
+        android:progress="1">
+    </SeekBar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="1dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+    <Button
+        android:id="@+id/tm1Add"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:text="Team 1 +"
+        android:layout_marginEnd="40dp">
+    </Button>
+
+    <Button
+        android:id="@+id/tm1Sub"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:text="Team 1 -"></Button>
+
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="1dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:padding="16dp">
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="16dp"
-            android:background="#009688"
-            android:backgroundTint="#FCFFFF"
-            android:onClick="resetButton"
-            android:paddingLeft="50dp"
-            android:paddingRight="50dp"
-            android:text="Reset"
-            android:textSize="14sp" />
+            android:id="@+id/tm2Add"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:text="Team 2 +"
+            android:layout_marginEnd="40dp">
+        </Button>
+
+        <Button
+            android:id="@+id/tm2Sub"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:text="Team 2 -"></Button>
 
     </LinearLayout>
+
 </LinearLayout>
