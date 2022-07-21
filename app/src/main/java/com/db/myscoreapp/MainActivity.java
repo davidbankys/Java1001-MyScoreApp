@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
                 int result = addMethod(Integer.parseInt(tm2score.getText().toString()), Integer.parseInt(scoreBy.getText().toString()));
                 tm2score.setText(String.valueOf(result));
+                System.out.println(result);
             }
         });
 
@@ -90,11 +91,15 @@ public class MainActivity extends AppCompatActivity {
 
 }
 
-    private int subtractMethod(int oldNumber, int newNumber) {
+//dice.java(roll the dice with one argument)
+//die -- one was pre-defined w here all the arguments were already defined
+    //wehre we had to pass in the dice side
+
+    private int  subtractMethod(int oldNumber, int newNumber) {
         int result = oldNumber - newNumber;
         return result;
-
     }
+
     private int addMethod(int oldNumber, int newNumber){
         int result = oldNumber + newNumber;
         return result;

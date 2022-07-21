@@ -13,4 +13,21 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:layout_width">150dp</item>
+        <item name="android:background">@color/secondaryDarkColor</item>
+        <item name="backgroundTint">@color/secondaryDarkColor</item>
+        <item name="android:fontFamily">cursive</item>
+        <item name="android:layout_weight">3</item>
+    </style>
+
+
+    <style name="Labels" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">87dp</item>
+        <item name="android:background">@color/primaryColor</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:layout_height">37dp</item>
+
+    </style>
 </resources>
