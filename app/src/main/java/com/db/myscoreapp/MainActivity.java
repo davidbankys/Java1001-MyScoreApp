@@ -106,6 +106,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId())
+        {
+            case R.id.nav_about:
+                Toast.makeText(MainActivity.this,"Hello, i'm enjoying this",Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.nav_setting:
+                Intent intent = new Intent(MainActivity.this , SettingActivity.class);
+                startActivity(intent);
+
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 
 
     private int  subtractMethod(int oldNumber, int newNumber) {
