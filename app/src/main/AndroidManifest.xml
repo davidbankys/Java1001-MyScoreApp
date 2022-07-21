@@ -14,6 +14,10 @@
         android:theme="@style/Theme.MyScoreApp"
         tools:targetApi="32">
         <activity
+            android:name=".SettingActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

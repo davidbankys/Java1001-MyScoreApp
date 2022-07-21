@@ -2,15 +2,21 @@ package com.db.myscoreapp;
 
 
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -91,9 +97,8 @@ public class MainActivity extends AppCompatActivity {
 
 }
 
-//dice.java(roll the dice with one argument)
-//die -- one was pre-defined w here all the arguments were already defined
-    //wehre we had to pass in the dice side
+
+
 
     private int  subtractMethod(int oldNumber, int newNumber) {
         int result = oldNumber - newNumber;
