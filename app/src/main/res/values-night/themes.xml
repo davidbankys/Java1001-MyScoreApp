@@ -16,8 +16,8 @@
 
     <style name="Button" parent="Widget.MaterialComponents.Button">
         <item name="android:layout_width">150dp</item>
-        <item name="android:background">@color/secondaryDarkColor</item>
-        <item name="backgroundTint">@color/secondaryDarkColor</item>
+        <item name="android:background">@color/primaryLightColor</item>
+        <item name="backgroundTint">@color/primaryLightColor</item>
         <item name="android:fontFamily">cursive</item>
         <item name="android:layout_weight">3</item>
     </style>
