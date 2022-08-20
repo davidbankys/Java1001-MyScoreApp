@@ -4,6 +4,7 @@ package com.db.myscoreapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
@@ -21,22 +22,21 @@ import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
-     TextView tm1Score;
+    TextView tm1Score;
     TextView tm2score;
     TextView scoreBy;
-    int  scoreTemA = 0;
-    int  scoreTemB = 0;
+    int scoreTemA = 0;
+    int scoreTemB = 0;
     SeekBar seekbar;
 
     Button fragmentButton, fragmentButton2;
-
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        tm1Score = (TextView)findViewById(R.id.textView1);
+        tm1Score = (TextView) findViewById(R.id.textView1);
         tm2score = (TextView) findViewById(R.id.textView2);
         scoreBy = (TextView) findViewById(R.id.scoreBylbl);
 
@@ -46,28 +46,6 @@ public class MainActivity extends AppCompatActivity {
         Button tm2Sub = (Button) findViewById(R.id.tm2Sub);
         fragmentButton = findViewById(R.id.fragmentButton);
         fragmentButton2 = findViewById(R.id.fragmentButton2);
-
-        fragmentButton.setOnClickListener(new View. OnClickListener(){
-            @Override
-            public void onClick(View v){
-                replaceFragmnent(new AppScoreFragment());
-            }
-        });
-
-        fragmentButton2.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                replaceFragmnent(new AppScoreFragment2());
-            }
-        });
-
-        private void replaceFragment(Fragment fragment) {
-
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            fragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.framelayout,fragment);
-            fragmentTransaction.commit();
-        }
 
         tm1Add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,27 +85,30 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        seekbar = (SeekBar) findViewById(R.id.seekBar);
+        seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
-        seekbar = (SeekBar)findViewById(R.id.seekBar);
-        seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                scoreBy.setText(String.valueOf(i));
+                System.out.println(i);
+            }
 
-        @Override
-        public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-            scoreBy.setText(String.valueOf(i));
-            System.out.println(i);
-        }
-        @Override
-        public void onStartTrackingTouch(SeekBar seekBar) {}
-        @Override
-        public void onStopTrackingTouch(SeekBar seekBar) {}
-    });
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
 
-}
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
+
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater  menuinflate = getMenuInflater();
-        menuinflate.inflate(R.menu.menu,menu);
+        MenuInflater menuinflate = getMenuInflater();
+        menuinflate.inflate(R.menu.menu, menu);
 
         return true;
     }
@@ -135,13 +116,12 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId())
-        {
+        switch (item.getItemId()) {
             case R.id.nav_about:
-                Toast.makeText(MainActivity.this,"Hello, i'm enjoying this",Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Hello, i'm enjoying this", Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.nav_setting:
-                Intent intent = new Intent(MainActivity.this , SettingActivity.class);
+                Intent intent = new Intent(MainActivity.this, SettingActivity.class);
                 startActivity(intent);
 
                 return true;
@@ -150,14 +130,44 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-    private int  subtractMethod(int oldNumber, int newNumber) {
+    private int subtractMethod(int oldNumber, int newNumber) {
         int result = oldNumber - newNumber;
         return result;
     }
 
-    private int addMethod(int oldNumber, int newNumber){
+    private int addMethod(int oldNumber, int newNumber) {
         int result = oldNumber + newNumber;
         return result;
+    }
+
+    fragmentButton.setOnClickListener(new View.OnClickListener()
+
+    {
+        @Override
+        public void onClick (View v){
+
+        replaceFragmnent(new AppScoreFragment());
+    }
+    }
+
+    private void replaceFragmnent(AppScoreFragment appScoreFragment) {
+    });
+
+        fragmentButton2.setOnClickListener(new View.OnClickListener()
+
+    {
+        @Override
+        public void onClick (View v){
+
+        replaceFragmnent(new AppScoreFragment());
+    }
+    });
+
+    private void replaceFragment(Fragment fragment) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.framelayout, fragment);
+        fragmentTransaction.commit();
+
     }
 }
