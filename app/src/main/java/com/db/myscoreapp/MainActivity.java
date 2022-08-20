@@ -4,6 +4,7 @@ package com.db.myscoreapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -27,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
     int  scoreTemB = 0;
     SeekBar seekbar;
 
+    Button fragmentButton, fragmentButton2;
+
 
 
     @Override
@@ -41,6 +44,30 @@ public class MainActivity extends AppCompatActivity {
         Button tm2Add = (Button) findViewById(R.id.tm2Add);
         Button tm1Sub = (Button) findViewById(R.id.tm1Sub);
         Button tm2Sub = (Button) findViewById(R.id.tm2Sub);
+        fragmentButton = findViewById(R.id.fragmentButton);
+        fragmentButton2 = findViewById(R.id.fragmentButton2);
+
+        fragmentButton.setOnClickListener(new View. OnClickListener(){
+            @Override
+            public void onClick(View v){
+                replaceFragmnent(new AppScoreFragment());
+            }
+        });
+
+        fragmentButton2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                replaceFragmnent(new AppScoreFragment2());
+            }
+        });
+
+        private void replaceFragment(Fragment fragment) {
+
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.framelayout,fragment);
+            fragmentTransaction.commit();
+        }
 
         tm1Add.setOnClickListener(new View.OnClickListener() {
             @Override

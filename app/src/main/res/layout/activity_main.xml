@@ -138,4 +138,23 @@
 
     </LinearLayout>
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"/>
+
+    <Button
+        android:id="@+id/fragmentButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fragment1" />
+
+    <Button
+            android:id="@+id/fragmentButton2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fragment2" />
+
+
 </LinearLayout>
+
+
